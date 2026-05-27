@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TECVIVO S.R.L. | Premium Real Estate & PropTech Solutions</title>
+    <meta name="description" content="Leading lessors of real estate in Brasov, Romania. Elevating property management with smart mobile technology.">
+    <style>
+        /* DESIGN SYSTEM: PREMIUM PROPTECH & REAL ESTATE */
+        :root {
+            --primary: #0F172A;         /* Midnight Architecture */
+            --primary-light: #1E293B;   /* Slate Structural */
+            --accent: #D97706;          /* Bronze/Gold - Luxury Accent */
+            --accent-hover: #B45309;
+            --bg-base: #F8FAFC;         /* Clean Marble */
+            --bg-white: #FFFFFF;
+            --text-main: #334155;
+            --text-muted: #64748B;
+            --border-color: #E2E8F0;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            --font-serif: 'Playfair Display', 'Didot', Georgia, serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-base);
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* 1. NAVIGATION (Glassmorphism) */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--bg-white);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            color: var(--accent);
+            font-family: var(--font-sans);
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-left: 5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #CBD5E1;
+            font-weight: 500;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* 2. HERO SECTION (Architectural Vibe) */
+        header {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 0 10%;
+            background-color: var(--primary);
+            position: relative;
+            color: var(--bg-white);
+            overflow: hidden;
+        }
+
+        /* CSS Architectural Silhouettes */
+        header::after {
+            content: "";
+            position: absolute;
+            bottom: 0; right: 0;
+            width: 50vw; height: 80vh;
+            background: 
+                linear-gradient(to right, transparent 49%, rgba(217, 119, 6, 0.2) 50%, transparent 51%),
+                linear-gradient(to bottom, transparent 49%, rgba(217, 119, 6, 0.2) 50%, transparent 51%),
+                linear-gradient(135deg, rgba(30, 41, 59, 1) 0%, rgba(15, 23, 42, 0) 100%);
+            background-size: 40px 40px, 40px 40px, 100% 100%;
+            border-top-left-radius: 40px;
+            border-left: 2px solid rgba(217, 119, 6, 0.4);
+            border-top: 2px solid rgba(217, 119, 6, 0.4);
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(217, 119, 6, 0.1);
+            color: var(--accent);
+            padding: 8px 24px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 30px;
+            border: 1px solid var(--accent);
+        }
+
+        header h1 {
+            font-family: var(--font-serif);
+            font-size: clamp(2.8rem, 6vw, 4.5rem);
+            font-weight: 400;
+            line-height: 1.15;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: #94A3B8;
+            max-width: 600px;
+            margin-bottom: 40px;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        .btn-accent {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--bg-white);
+            padding: 16px 45px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s;
+            border: none;
+        }
+
+        .btn-accent:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(217, 119, 6, 0.3);
+        }
+
+        /* 3. ABOUT SECTION */
+        .section {
+            padding: 120px 10%;
+        }
+
+        .bg-white {
+            background-color: var(--bg-white);
+        }
+
+        .section-header {
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-family: var(--font-serif);
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+
+        .section-header .line {
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .highlight-box {
+            background: var(--bg-base);
+            padding: 50px;
+            border-radius: 4px;
+            position: relative;
+            border: 1px solid var(--border-color);
+        }
+
+        .highlight-box::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 6px; height: 100%;
+            background: var(--accent);
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+        }
+
+        /* 4. REAL ESTATE SERVICES */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .service-card {
+            background: var(--bg-white);
+            padding: 50px 40px;
+            border: 1px solid var(--border-color);
+            transition: all 0.4s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+        }
+
+        .service-icon {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+            display: block;
+            font-style: italic;
+        }
+
+        .service-card h3 {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-weight: 300;
+        }
+
+        /* 5. PROPTECH APP PROMO (CRITICAL FOR GOOGLE PLAY CONSOLE) */
+        .app-promo {
+            background: var(--primary);
+            color: var(--bg-white);
+            padding: 100px 10%;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .app-content h2 {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            color: var(--bg-white);
+            margin-bottom: 25px;
+            font-weight: 400;
+        }
+
+        .app-content p {
+            font-size: 1.1rem;
+            color: #94A3B8;
+            margin-bottom: 35px;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+
+        .feature-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+            font-size: 1rem;
+            color: #E2E8F0;
+            letter-spacing: 0.5px;
+        }
+
+        .feature-list li::before {
+            content: "◆";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-size: 1rem;
+            top: 2px;
+        }
+
+        .btn-outline {
+            display: inline-block;
+            background: transparent;
+            color: var(--accent);
+            padding: 16px 35px;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: 1px solid var(--accent);
+            transition: all 0.3s;
+            font-size: 0.85rem;
+            border-radius: 4px;
+        }
+
+        .btn-outline:hover {
+            background: var(--accent);
+            color: var(--bg-white);
+        }
+
+        /* Abstract Smart Phone UI CSS */
+        .app-visual {
+            width: 100%;
+            max-width: 340px;
+            height: 600px;
+            margin: 0 auto;
+            background: var(--primary-light);
+            border-radius: 35px;
+            border: 10px solid #0B101A;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .app-notch {
+            position: absolute;
+            top: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 140px; height: 25px;
+            background: #0B101A;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+
+        .app-screen {
+            padding: 60px 25px 25px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .app-ui-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+
+        .app-ui-title {
+            color: var(--accent);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+
+        .app-ui-value {
+            color: white;
+            font-size: 1.4rem;
+            font-family: var(--font-serif);
+        }
+
+        /* 6. CONTACT & CORPORATE INFO (MATCHES D&B EXACTLY) */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .corp-details {
+            background: var(--bg-white);
+            padding: 50px;
+            border: 1px solid var(--border-color);
+            border-top: 4px solid var(--primary);
+        }
+
+        .corp-details h3 {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: var(--primary);
+            font-weight: 400;
+        }
+
+        .detail-row {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--bg-base);
+        }
+
+        .detail-row:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        .detail-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .detail-value {
+            font-size: 1rem;
+            color: var(--primary);
+            font-weight: 500;
+            line-height: 1.5;
+        }
+
+        .contact-form {
+            background: var(--bg-white);
+            padding: 50px;
+            border: 1px solid var(--border-color);
+        }
+
+        .contact-form h3 {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: var(--primary);
+            font-weight: 400;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 16px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            background: var(--bg-base);
+            transition: border-color 0.3s;
+        }
+
+        .contact-form input:focus, .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: var(--bg-white);
+        }
+
+        .contact-form textarea {
+            height: 140px;
+            resize: vertical;
+        }
+
+        .btn-submit {
+            background: var(--primary);
+            color: var(--bg-white);
+            padding: 18px 0;
+            width: 100%;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-size: 0.85rem;
+        }
+
+        .btn-submit:hover {
+            background: var(--accent);
+        }
+
+        /* 7. FOOTER & LEGAL */
+        footer {
+            background: #0B101A;
+            color: #64748B;
+            padding: 80px 10% 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 50px;
+            margin-bottom: 60px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding-bottom: 50px;
+        }
+
+        .footer-col h4 {
+            color: var(--bg-white);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul a {
+            color: #64748B;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-col ul a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 992px) {
+            .nav-links { display: none; }
+            .about-grid, .app-promo, .contact-container { grid-template-columns: 1fr; }
+            header h1 { font-size: 2.2rem; }
+            .app-promo { padding: 80px 5%; }
+            .app-visual { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">TECVIVO <span>S.R.L.</span></div>
+        <div class="nav-links">
+            <a href="#about">The Firm</a>
+            <a href="#leasing">Leasing Portfolio</a>
+            <a href="#proptech">Resident App</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <header>
+        <div class="hero-content">
+            <div class="hero-badge">Real Estate Lessors & Leasing</div>
+            <h1>Redefining Property Leasing Through Innovation.</h1>
+            <p>A premier Romanian real estate firm blending high-quality property leasing with next-generation digital resident experiences and smart facility management.</p>
+            <a href="#proptech" class="btn-accent">Explore PropTech App</a>
+        </div>
+    </header>
+
+    <section id="about" class="section bg-white">
+        <div class="section-header">
+            <h2>Corporate Identity</h2>
+            <div class="line"></div>
+        </div>
+        <div class="about-grid">
+            <div class="about-text">
+                <p><strong>TECVIVO S.R.L.</strong> is an established property management and leasing enterprise headquartered in Brasov, Romania. Operating within the core Real Estate sector, our firm specializes in the acquisition, management, and leasing of premium real property assets.</p>
+                <p>As authorized Lessors of Real Estate, we bridge the gap between architectural infrastructure and the people who inhabit it. We cater to both residential tenants seeking modern living spaces and commercial enterprises requiring strategic business locations in the heart of Brasov.</p>
+            </div>
+            <div class="highlight-box">
+                <h3 style="font-family: var(--font-sans); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; color: var(--accent); margin-bottom: 10px;">Industry Classification</h3>
+                <p style="color: var(--primary); font-weight: 500; font-size: 1.1rem; line-height: 1.6;">
+                    Lessors of Real Estate.<br>
+                    Real Estate and Rental and Leasing.<br>
+                    Real property lessors, nec.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="leasing" class="section">
+        <div class="section-header">
+            <h2>Leasing Portfolio</h2>
+            <div class="line"></div>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <span class="service-icon">I</span>
+                <h3>Commercial Leasing</h3>
+                <p>Strategic office spaces and retail fronts managed to the highest corporate standards. We provide environments where businesses can thrive and expand.</p>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">II</span>
+                <h3>Residential Rentals</h3>
+                <p>Premium apartment and housing rentals offering comfort, security, and integrated smart-home capabilities for the modern tenant.</p>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">III</span>
+                <h3>Property Management</h3>
+                <p>Comprehensive facility maintenance, ensuring all leased properties are preserved, secure, and operating at peak energy efficiency.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="proptech" class="app-promo">
+        <div class="app-content">
+            <h2>Tecvivo Resident Portal</h2>
+            <p>To provide our tenants with a seamless, modern leasing experience, <strong>TECVIVO S.R.L. develops and maintains a proprietary mobile application published on the Google Play Store.</strong></p>
+            <p>The <em>Tecvivo Resident</em> app transforms how you interact with your leased property. It serves as a digital concierge, allowing tenants to pay rent securely, request maintenance, and unlock smart doors directly from their smartphones.</p>
+            
+            <ul class="feature-list">
+                <li>Secure mobile rent payments and digital lease invoicing.</li>
+                <li>Instant maintenance requests with photo uploads and status tracking.</li>
+                <li>Digital smart-key integration for contactless building entry.</li>
+                <li>Direct messaging channel to the property management team.</li>
+            </ul>
+            
+            <a href="#contact" class="btn-outline">Google Play Developer Policy</a>
+        </div>
+        
+        <div class="app-visual">
+            <div class="app-notch"></div>
+            <div class="app-screen">
+                <div style="text-align: center; margin-bottom: 25px;">
+                    <h3 style="font-family: var(--font-sans); color: var(--bg-white); font-weight: 500;">Welcome Home</h3>
+                    <p style="color: var(--accent); font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase;">Apt 4B, Brasov Complex</p>
+                </div>
+                
+                <div class="app-ui-card">
+                    <div class="app-ui-title">Current Balance</div>
+                    <div class="app-ui-value">€ 850.00</div>
+                    <div style="font-size: 0.7rem; color: #64748B; margin-top: 5px;">Due: Oct 1st</div>
+                </div>
+                
+                <div class="app-ui-card" style="border-left: 4px solid var(--accent);">
+                    <div class="app-ui-title">Maintenance</div>
+                    <div class="app-ui-value" style="font-size: 1rem;">HVAC Inspection</div>
+                    <div style="font-size: 0.7rem; color: #10B981; margin-top: 5px;">Status: Scheduled for Tomorrow</div>
+                </div>
+                
+                <div style="margin-top: auto; background: var(--accent); padding: 15px; border-radius: 12px; text-align: center; color: white; font-size: 0.85rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">
+                    Unlock Front Door
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section bg-white">
+        <div class="section-header">
+            <h2>Official Registry & Contact</h2>
+            <div class="line"></div>
+        </div>
+        
+        <div class="contact-container">
+            <div class="corp-details">
+                <h3>Entity Verification</h3>
+                
+                <div class="detail-row">
+                    <div class="detail-label">Legal Entity Name</div>
+                    <div class="detail-value"><strong>TECVIVO S.R.L.</strong></div>
+                </div>
+
+                <div class="detail-row">
+                    <div class="detail-label">Industry Classification</div>
+                    <div class="detail-value">
+                        Lessors of Real Estate<br>
+                        Real Estate and Rental and Leasing
+                    </div>
+                </div>
+
+                <div class="detail-row">
+                    <div class="detail-label">Registered Address</div>
+                    <div class="detail-value">
+                        STR. CARPATILOR NR. 60 Brasov<br>
+                        Brasov<br>
+                        Romania
+                    </div>
+                </div>
+
+                <div class="detail-row">
+                    <div class="detail-label">Official Contact Email</div>
+                    <div class="detail-value" style="color: var(--accent);">info@tecvivo.com</div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h3>Leasing Inquiry</h3>
+                <form onsubmit="event.preventDefault();">
+                    <input type="text" placeholder="Full Name / Company Name" required>
+                    <input type="email" placeholder="Email Address" required>
+                    <input type="text" placeholder="Subject (e.g., Commercial Lease, App Support)">
+                    <textarea placeholder="Please detail your leasing inquiry or technical support request..." required></textarea>
+                    <button type="submit" class="btn-submit">Submit Official Request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="logo" style="color: var(--bg-white); font-size: 1.2rem; margin-bottom: 20px;">TECVIVO <span style="color: var(--accent);">S.R.L.</span></div>
+                <p style="line-height: 1.8;">Redefining property management and tenant experiences through digital innovation in Romania.</p>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Resident App Support</h4>
+                <ul>
+                    <li><a href="#">Google Play Publisher Info</a></li>
+                    <li><a href="#">Report an App Issue / Bug</a></li>
+                    <li><a href="#"><strong>Request Account & Data Deletion</strong></a></li>
+                    <li><a href="#">App Permissions (Bluetooth/Location)</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Legal & Compliance</h4>
+                <ul>
+                    <li><a href="#">Terms of Service (Leasing)</a></li>
+                    <li><a href="#">Privacy Policy (GDPR)</a></li>
+                    <li><a href="#">Tenant Rights & Regulations</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 TECVIVO S.R.L. Registered in Romania. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
